@@ -8,6 +8,7 @@
 <script>
 export default {
   mounted() {
+    // eslint-disable-next-line
     particleground(document.getElementById("particleground"), {
       dotColor: "#1174ad",
       lineColor: "#1174ad",
