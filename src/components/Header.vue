@@ -36,6 +36,10 @@ header img {
 }
 
 @media screen and (max-width: 767px) {
+  .header {
+    margin-top: 50%;
+  }
+
   header h1 {
     font-size: 30px;
     left: 0;
@@ -47,7 +51,7 @@ header img {
   }
 
   header {
-    margin-left: 2%;
+    margin-left: 4%;
   }
 }
 </style>
