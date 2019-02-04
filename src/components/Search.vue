@@ -8,7 +8,7 @@
         <input class="form-query" name="query" v-model="query" @keypress="toggle()">
         <button class="form-btn" type="submit">Search</button>
       </div>
-      <p v-if="showError" style="color:#FE5E44">Please Enter a Query</p>
+      <p v-if="showError" class="show-error">Please Enter a Query</p>
     </form>
   </div>
 </template>
@@ -22,7 +22,19 @@ export default {
       showError: false
     };
   },
-  methods: {}
+  methods: {
+    search: function() {
+      let query = this.query;
+      if (query) {
+        this.$router.push("/results/" + query);
+      } else {
+        this.showError = true;
+      }
+    },
+    toggle: function() {
+      this.showError = false;
+    }
+  }
 };
 </script>
 
@@ -83,6 +95,14 @@ export default {
 
 .form-query:focus {
   outline: none;
+}
+
+.show-error {
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  /* color: #fe5e44; */
+  color: red;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 767px) {
