@@ -20,19 +20,22 @@ header {
   color: aliceblue;
   position: relative;
   overflow: hidden;
-  margin-left: 19%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header h1 {
-  font-size: 70px;
+  font-size: 80px;
   font-family: "Noto Sans", sans-serif;
   position: relative;
   left: 10px;
 }
 
 header img {
-  height: 200px;
+  height: 120px;
   float: left;
+  margin: 0 20px 0 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -47,11 +50,7 @@ header img {
   }
 
   header img {
-    height: 100px;
-  }
-
-  header {
-    margin-left: 4%;
+    height: 80px;
   }
 }
 </style>

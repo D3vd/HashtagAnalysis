@@ -46,4 +46,9 @@ div {
   font: inherit;
   vertical-align: baseline;
 }
+
+body,
+html {
+  overflow: hidden;
+}
 </style>
