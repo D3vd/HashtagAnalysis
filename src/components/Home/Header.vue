@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <header>
-      <img src="../assets/logo.png" alt="Hashtag Analysis">
+      <img src="../../assets/logo.png" alt="Hashtag Analysis">
       <h1>Hashtag Analysis</h1>
     </header>
   </div>

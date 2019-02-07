@@ -27,7 +27,7 @@ export default {
     search: function() {
       let query = this.query;
       if (query) {
-        this.$router.push("/results/" + query);
+        this.$router.push("/result/" + query);
       } else {
         this.showError = true;
       }
