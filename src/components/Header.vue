@@ -23,6 +23,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
 }
 
 header h1 {
@@ -44,13 +45,14 @@ header img {
   }
 
   header h1 {
-    font-size: 30px;
+    font-size: 29px;
     left: 0;
     padding-top: 5px;
   }
 
   header img {
-    height: 80px;
+    height: 70px;
+    margin: 0 10px 0 0;
   }
 }
 </style>

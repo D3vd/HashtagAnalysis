@@ -6,6 +6,7 @@
           <strong>#</strong>
         </div>
         <input class="form-query" name="query" v-model="query" @keypress="toggle()">
+        <div class="hashtag-mobile">#</div>
         <button class="form-btn" type="submit">Search</button>
       </div>
       <p v-if="showError" class="show-error">Please Enter a Query</p>
@@ -52,7 +53,7 @@ export default {
 
 .form {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 100%;
@@ -73,6 +74,7 @@ export default {
   width: 500px;
   font-size: 35px;
   font-family: "Noto Sans", sans-serif;
+  background-color: white;
 }
 
 .form-btn {
@@ -82,6 +84,7 @@ export default {
   border: none;
   color: aliceblue;
   background-color: black;
+  padding: 0 5px;
 }
 
 .form-btn:hover {
@@ -100,34 +103,55 @@ export default {
 .show-error {
   text-align: center;
   font-family: "Noto Sans", sans-serif;
-  /* color: #fe5e44; */
-  color: red;
+  color: #fe5e44;
   font-size: 20px;
+  margin-top: 20px;
+}
+
+.hashtag-mobile {
+  display: none;
 }
 
 @media screen and (max-width: 767px) {
   .form {
-    /* align-items: baseline; */
     justify-content: initial;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
   }
+
   .search-form {
-    margin: 50px 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .form-query {
-    flex: 1;
-    flex-basis: content;
     height: 40px;
+    font-size: 25px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding-left: 25px;
+  }
+
+  .hashtag-mobile {
+    display: unset;
+    position: absolute;
+    left: 6px;
+    font-family: "Noto Sans", sans-serif;
     font-size: 25px;
   }
 
   .hashtag {
+    display: none;
     height: 40px;
     font-size: 25px;
   }
 
   .form-btn {
-    visibility: hidden;
+    display: none;
   }
 }
 </style>
