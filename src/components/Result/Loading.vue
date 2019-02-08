@@ -14,5 +14,6 @@ export default {
 .loading {
   margin: 20%;
   text-align: center;
+  position: relative;
 }
 </style>
