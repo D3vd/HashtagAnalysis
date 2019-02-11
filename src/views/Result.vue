@@ -11,9 +11,9 @@
     <div v-if="!error&&!loading" style="position: relative; color: white; text-align: center">
       <h1>{{this.query}}</h1>
       <h2>{{this.response.sentiment}}</h2>
-      <h3>Positive: {{this.response.results.positive}}</h3>
-      <h3>Negative: {{this.response.results.negative}}</h3>
-      <h3>Neutral: {{this.response.results.neutral}}</h3>
+      <h3>Positive: {{this.response.results.positive}}%</h3>
+      <h3>Negative: {{this.response.results.negative}}%</h3>
+      <h3>Neutral: {{this.response.results.neutral}}%</h3>
     </div>
   </div>
 </template>
