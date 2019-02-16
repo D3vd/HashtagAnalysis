@@ -12,7 +12,11 @@
       <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex xs12>
-            <EmojiStatus v-bind:sentiment="this.response.sentiment"/>
+            <EmojiStatus
+              v-bind:sentiment="this.response.sentiment"
+              v-bind:query="this.query"
+              v-bind:percent="this.response.mean"
+            />
           </v-flex>
         </v-layout>
         <v-layout row wrap>
