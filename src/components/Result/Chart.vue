@@ -1,6 +1,6 @@
 <template>
-  <div class="chart" style="position: relative">
-    <canvas id="result"></canvas>
+  <div class="chart">
+    <canvas v-bind:id="'result' + this.id"></canvas>
   </div>
 </template>
 
@@ -10,11 +10,12 @@ import Chart from "chart.js";
 export default {
   name: "Chart",
   props: {
-    values: Array
+    values: Array,
+    id: String
   },
   methods: {
     createChart(values) {
-      const ctx = document.getElementById("result");
+      const ctx = document.getElementById("result" + this.id);
       // eslint-disable-next-line
       const myChart = new Chart(ctx, {
         type: "pie",
@@ -51,3 +52,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.chart {
+  width: 100%;
+  position: relative;
+}
+</style>
+

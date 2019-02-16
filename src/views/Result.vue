@@ -8,13 +8,18 @@
       <h1>Unable to process request</h1>
     </div>
 
-    <div v-if="!error&&!loading" style="position: relative; color: white; text-align: center">
-      <h1>{{this.query}}</h1>
-      <h2>{{this.response.sentiment}}</h2>
-      <h3>Positive: {{this.response.results.positive}}%</h3>
-      <h3>Negative: {{this.response.results.negative}}%</h3>
-      <h3>Neutral: {{this.response.results.neutral}}%</h3>
-      <Chart v-bind:values="this.mean_values"/>
+    <div v-if="!error&&!loading" style="position: relative">
+      <v-container fluid grid-list-md>
+        <v-layout row wrap>
+          <v-flex xs12 md4>
+            <Chart v-bind:values="this.mean_values" id="1"/>
+          </v-flex>
+          <v-flex xs12 md4></v-flex>
+          <v-flex xs12 md4>
+            <Chart v-bind:values="this.total_values" id="2"/>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </div>
   </div>
 </template>
