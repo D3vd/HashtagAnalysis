@@ -11,7 +11,7 @@
     <div v-if="this.sentiment=='Negative'">
       <img src="../../assets/negative.png" alt="negative">
       <h1>
-        <span class="percent">{{this.percent.positive}}%</span> of people feel
+        <span class="percent">{{this.percent.negative}}%</span> of people feel
         <span class="negative">Negative</span>
         about {{this.query}}
       </h1>
