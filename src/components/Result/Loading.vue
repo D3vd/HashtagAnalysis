@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <div class="v-align">
-      <h1 class="loading-text">Collecting Tweets...</h1>
+      <h1 class="loading-text">Collecting Tweets on {{this.query}}...</h1>
       <div class="loader">
         <aside class="loader__box loader--left">
           <span class="loader__circle"></span>
@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  name: "loading"
+  name: "loading",
+  props: {
+    query: String
+  }
 };
 </script>
 

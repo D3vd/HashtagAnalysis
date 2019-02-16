@@ -1,7 +1,7 @@
 <template>
   <div class="result">
     <div v-if="loading&&!error">
-      <Loading/>
+      <Loading v-bind:query="this.query"/>
     </div>
 
     <div v-if="error" style="position: relative; text-align:center">
@@ -14,12 +14,14 @@
       <h3>Positive: {{this.response.results.positive}}%</h3>
       <h3>Negative: {{this.response.results.negative}}%</h3>
       <h3>Neutral: {{this.response.results.neutral}}%</h3>
+      <Chart v-bind:values="this.mean_values"/>
     </div>
   </div>
 </template>
 
 <script>
 import Loading from "@/components/Result/Loading.vue";
+import Chart from "@/components/Result/Chart.vue";
 
 import axios from "axios";
 
@@ -30,11 +32,16 @@ export default {
       query: "",
       response: {},
       loading: true,
-      error: false
+      error: false,
+      error_code: 0,
+      error_message: "",
+      mean_values: [],
+      total_values: []
     };
   },
   components: {
-    Loading
+    Loading,
+    Chart
   },
 
   mounted: function() {
@@ -45,6 +52,15 @@ export default {
       .get("https://hashtaganalysis.herokuapp.com/api/" + query)
       .then(response => {
         this.response = response.data;
+        this.mean_values = [
+          this.response.mean.negative,
+          this.response.mean.positive
+        ];
+        this.total_values = [
+          this.response.results.negative,
+          this.response.results.positive,
+          this.response.results.neutral
+        ];
         this.loading = false;
         this.error = false;
       })
