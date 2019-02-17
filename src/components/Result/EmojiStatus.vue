@@ -66,7 +66,7 @@ export default {
 }
 
 .percent {
-  color: black;
+  color: rgb(97, 97, 97);
 }
 
 @media screen and (max-width: 767px) {

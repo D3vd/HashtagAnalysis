@@ -26,14 +26,14 @@ export default {
               label: "",
               data: values,
               backgroundColor: [
-                "rgba(255, 0, 0)",
-                "rgba(0, 255, 0)",
-                "rgba(0, 0, 0)"
+                "rgba(222, 45, 45)",
+                "rgba(36, 178, 36)",
+                "rgba(54, 55, 54)"
               ],
               borderColor: [
-                "rgba(255, 0, 0)",
-                "rgba(0, 255, 0)",
-                "rgba(0, 0, 0)"
+                "rgba(222, 45, 45)",
+                "rgba(36, 178, 36)",
+                "rgba(54, 55, 54)"
               ],
               borderWidth: 3
             }

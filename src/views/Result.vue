@@ -1,5 +1,6 @@
 <template>
   <div class="result">
+    <!-- <Header style="position: relative"/> -->
     <div v-if="loading&&!error">
       <Loading v-bind:query="this.query"/>
     </div>
@@ -94,6 +95,8 @@ export default {
           if (this.status_code === 429) {
             this.error_message =
               "Too many requests at the moment. Try again later.";
+          } else if (this.status_code === 400) {
+            this.error_message = "Enter a valid Query";
           } else {
             this.error_message = "Server Error. Try Again later.";
           }
