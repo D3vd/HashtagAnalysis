@@ -4,8 +4,8 @@
       <Loading v-bind:query="this.query"/>
     </div>
 
-    <div v-if="error" style="position: relative; text-align:center">
-      <h1>Unable to process request</h1>
+    <div v-if="error" style="position: relative">
+      <Error v-bind:message="this.error_message"/>
     </div>
 
     <div v-if="!error&&!loading" style="position: relative">
@@ -19,6 +19,7 @@
             />
           </v-flex>
         </v-layout>
+
         <v-layout row wrap>
           <v-flex xs12 md5>
             <Chart v-bind:values="this.mean_values" id="1"/>
@@ -37,6 +38,7 @@
 import Loading from "@/components/Result/Loading.vue";
 import Chart from "@/components/Result/Chart.vue";
 import EmojiStatus from "@/components/Result/EmojiStatus.vue";
+import Error from "@/components/Result/Error.vue";
 
 import axios from "axios";
 
@@ -48,7 +50,7 @@ export default {
       response: {},
       loading: true,
       error: false,
-      error_code: 0,
+      status_code: 0,
       error_message: "",
       mean_values: [],
       total_values: []
@@ -57,7 +59,8 @@ export default {
   components: {
     Loading,
     Chart,
-    EmojiStatus
+    EmojiStatus,
+    Error
   },
 
   mounted: function() {
@@ -68,21 +71,38 @@ export default {
       .get("https://hashtaganalysis.herokuapp.com/api/" + query)
       .then(response => {
         this.response = response.data;
-        this.mean_values = [
-          this.response.mean.negative,
-          this.response.mean.positive
-        ];
-        this.total_values = [
-          this.response.results.negative,
-          this.response.results.positive,
-          this.response.results.neutral
-        ];
-        this.loading = false;
-        this.error = false;
+
+        this.status_code = this.response.status_code;
+
+        if (this.status_code === 200) {
+          this.mean_values = [
+            this.response.mean.negative,
+            this.response.mean.positive
+          ];
+
+          this.total_values = [
+            this.response.results.negative,
+            this.response.results.positive,
+            this.response.results.neutral
+          ];
+
+          this.loading = false;
+          this.error = false;
+        } else {
+          this.loading = false;
+          this.error = true;
+          if (this.status_code === 429) {
+            this.error_message =
+              "Too many requests at the moment. Try again later.";
+          } else {
+            this.error_message = "Server Error. Try Again later.";
+          }
+        }
       })
       .catch(error => {
-        console.log(error);
+        this.loading = false;
         this.error = true;
+        this.error_message = error;
       });
   }
 };

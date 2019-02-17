@@ -8,6 +8,7 @@
         about {{this.query}}
       </h1>
     </div>
+
     <div v-if="this.sentiment=='Negative'">
       <img src="../../assets/negative.png" alt="negative">
       <h1>
@@ -16,6 +17,7 @@
         about {{this.query}}
       </h1>
     </div>
+
     <div v-if="this.sentiment=='Controversial'">
       <img src="../../assets/controversial.png" alt="controversial">
       <h1>
