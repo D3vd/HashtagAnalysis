@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="!error&&!loading" style="position: relative">
-      <v-container fluid grid-list-md>
+      <!-- <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex xs12>
             <EmojiStatus
@@ -30,7 +30,8 @@
             <Chart v-bind:values="this.total_values" id="2"/>
           </v-flex>
         </v-layout>
-      </v-container>
+      </v-container>-->
+      <Pages v-bind:response="this.response"/>
     </div>
   </div>
 </template>
@@ -40,6 +41,7 @@ import Loading from "@/components/Result/Loading.vue";
 import Chart from "@/components/Result/Chart.vue";
 import EmojiStatus from "@/components/Result/EmojiStatus.vue";
 import Error from "@/components/Result/Error.vue";
+import Pages from "@/components/Result/Pages.vue";
 
 import axios from "axios";
 
@@ -61,7 +63,8 @@ export default {
     Loading,
     Chart,
     EmojiStatus,
-    Error
+    Error,
+    Pages
   },
 
   mounted: function() {
