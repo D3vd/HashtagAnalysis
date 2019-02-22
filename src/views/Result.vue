@@ -10,36 +10,13 @@
     </div>
 
     <div v-if="!error&&!loading" style="position: relative">
-      <!-- <v-container fluid grid-list-md>
-        <v-layout row wrap>
-          <v-flex xs12>
-            <EmojiStatus
-              v-bind:sentiment="this.response.sentiment"
-              v-bind:query="this.query"
-              v-bind:percent="this.response.mean"
-            />
-          </v-flex>
-        </v-layout>
-
-        <v-layout row wrap>
-          <v-flex xs12 md5>
-            <Chart v-bind:values="this.mean_values" id="1"/>
-          </v-flex>
-          <v-flex xs12 md2></v-flex>
-          <v-flex xs12 md5>
-            <Chart v-bind:values="this.total_values" id="2"/>
-          </v-flex>
-        </v-layout>
-      </v-container>-->
-      <Pages v-bind:response="this.response" v-bind:query="this.query"/>
+      <Pages v-bind:response="this.response"/>
     </div>
   </div>
 </template>
 
 <script>
 import Loading from "@/components/Result/Loading.vue";
-import Chart from "@/components/Result/Chart.vue";
-import EmojiStatus from "@/components/Result/EmojiStatus.vue";
 import Error from "@/components/Result/Error.vue";
 import Pages from "@/components/Result/Pages.vue";
 
@@ -61,8 +38,6 @@ export default {
   },
   components: {
     Loading,
-    Chart,
-    EmojiStatus,
     Error,
     Pages
   },

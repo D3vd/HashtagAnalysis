@@ -5,7 +5,7 @@
         <Page1
           v-bind:sentiment="this.response.sentiment"
           v-bind:percent="this.response.mean"
-          v-bind:query="this.query"
+          v-bind:query="this.response.query"
         />
       </div>
       <div class="section">Second section ...</div>
@@ -26,13 +26,12 @@ export default {
     return {
       options: {
         menu: "#menu",
-        sectionsColor: ["", "#ff5f45", "#0798ec"]
+        sectionsColor: ["", "", "#0798ec"]
       }
     };
   },
   props: {
-    response: Object,
-    query: String
+    response: Object
   }
 };
 </script>

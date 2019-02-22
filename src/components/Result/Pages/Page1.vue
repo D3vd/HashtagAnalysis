@@ -23,6 +23,34 @@ export default {
     percent: Object,
     sentiment: String,
     query: String
+  },
+  data() {
+    return {
+      backgroundColor: "",
+      particleColor: ""
+    };
+  },
+  mounted: function() {
+    if (this.sentiment === "Positive") {
+      this.backgroundColor = "#338A2E";
+      this.particleColor = "#156711";
+    } else if (this.sentiment === "Negative") {
+      this.backgroundColor = "#AA3939";
+      this.particleColor = "#801515";
+    } else {
+      this.backgroundColor = "#2F2F2F";
+      this.particleColor = "#020302";
+    }
+
+    // eslint-disable-next-line
+    var pg = particleground(document.getElementById("particleground"), {
+      dotColor: this.particleColor,
+      lineColor: this.particleColor
+    });
+
+    document.getElementById(
+      "particleground"
+    ).style.backgroundColor = this.backgroundColor;
   }
 };
 </script>
@@ -38,4 +66,3 @@ export default {
   float: right;
 }
 </style>
-
