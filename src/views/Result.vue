@@ -114,13 +114,13 @@ export default {
           this.particle_color = "#2F312F";
         }
 
-        // eslint-disable-next-line
-        particleground(document.getElementById("particleground"), {
-          dotColor: this.particle_color,
-          lineColor: this.particle_color,
-          density: 8000,
-          proximity: 80
-        });
+        // // eslint-disable-next-line
+        // particleground(document.getElementById("particleground"), {
+        //   dotColor: this.particle_color,
+        //   lineColor: this.particle_color,
+        //   density: 8000,
+        //   proximity: 80
+        // });
       })
       .catch(error => {
         this.loading = false;

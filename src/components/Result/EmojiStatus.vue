@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style scoped>
+.emoji {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 .emoji div img {
   display: block;
   margin-left: auto;
