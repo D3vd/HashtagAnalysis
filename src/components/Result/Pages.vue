@@ -2,7 +2,11 @@
   <div>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
-        <Page1 v-bind:sentiment="this.response.sentiment" v-bind:percent="this.response.mean"/>
+        <Page1
+          v-bind:sentiment="this.response.sentiment"
+          v-bind:percent="this.response.mean"
+          v-bind:query="this.query"
+        />
       </div>
       <div class="section">Second section ...</div>
       <div class="section">Third section ...</div>
@@ -27,7 +31,8 @@ export default {
     };
   },
   props: {
-    response: Object
+    response: Object,
+    query: String
   }
 };
 </script>
