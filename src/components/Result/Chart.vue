@@ -30,8 +30,12 @@ export default {
                 "rgba(36, 178, 36)",
                 "rgba(54, 55, 54)"
               ],
-              borderColor: ["rgba(0, 0, 0)", "rgba(0, 0, 0)", "rgba(0, 0, 0)"],
-              borderWidth: 1
+              borderColor: [
+                "rgba(222, 45, 45)",
+                "rgba(36, 178, 36)",
+                "rgba(54, 55, 54)"
+              ],
+              borderWidth: 3
             }
           ]
         },

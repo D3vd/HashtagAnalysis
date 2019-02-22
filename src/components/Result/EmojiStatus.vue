@@ -1,7 +1,7 @@
 <template>
   <div class="emoji">
     <div v-if="this.sentiment=='Positive'">
-      <!-- <img src="../../assets/positive.png" alt="positive"> -->
+      <img src="../../assets/positive.png" alt="positive">
       <h1>
         <span class="percent">{{this.percent.positive}}%</span> of people feel
         <span class="positive">Positive</span>
@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="this.sentiment=='Negative'">
-      <!-- <img src="../../assets/negative.png" alt="negative"> -->
+      <img src="../../assets/negative.png" alt="negative">
       <h1>
         <span class="percent">{{this.percent.negative}}%</span> of people feel
         <span class="negative">Negative</span>
@@ -19,7 +19,7 @@
     </div>
 
     <div v-if="this.sentiment=='Controversial'">
-      <!-- <img src="../../assets/controversial.png" alt="controversial"> -->
+      <img src="../../assets/controversial.png" alt="controversial">
       <h1>
         {{this.query}} is
         <span class="controversial">Controversial</span> at the moment
@@ -40,10 +40,6 @@ export default {
 </script>
 
 <style scoped>
-.emoji {
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
 .emoji div img {
   display: block;
   margin-left: auto;

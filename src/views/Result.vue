@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="!error&&!loading" style="position: relative">
-      <v-container fluid grid-list-md>
+      <!-- <v-container fluid grid-list-md>
         <v-layout row wrap>
           <v-flex xs12>
             <EmojiStatus
@@ -30,8 +30,8 @@
             <Chart v-bind:values="this.total_values" id="2"/>
           </v-flex>
         </v-layout>
-      </v-container>
-      <!-- <Pages v-bind:response="this.response" v-bind:query="this.query"/> -->
+      </v-container>-->
+      <Pages v-bind:response="this.response" v-bind:query="this.query"/>
     </div>
   </div>
 </template>
@@ -56,8 +56,7 @@ export default {
       status_code: 0,
       error_message: "",
       mean_values: [],
-      total_values: [],
-      particle_color: ""
+      total_values: []
     };
   },
   components: {
@@ -105,22 +104,6 @@ export default {
             this.error_message = "Server Error. Try Again later.";
           }
         }
-
-        if (this.response.sentiment === "Positive") {
-          this.particle_color = "#24B224";
-        } else if (this.respose.sentiment === "Negative") {
-          this.particle_color = "#DE2D2D";
-        } else {
-          this.particle_color = "#2F312F";
-        }
-
-        // // eslint-disable-next-line
-        // particleground(document.getElementById("particleground"), {
-        //   dotColor: this.particle_color,
-        //   lineColor: this.particle_color,
-        //   density: 8000,
-        //   proximity: 80
-        // });
       })
       .catch(error => {
         this.loading = false;
