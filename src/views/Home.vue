@@ -20,15 +20,8 @@ export default {
     Footer
   },
   mounted() {
-    // eslint-disable-next-line
-    particleground(document.getElementById("particleground"), {
-      dotColor: "#1174ad",
-      lineColor: "#1174ad",
-      density: 8000,
-      proximity: 80
-    });
-
-    document.getElementById("particleground").style.backgroundColor = "#1da1f2";
+    document.getElementById("particleground").style.opacity = 1;
+    document.body.style.backgroundColor = "#1da1f2";
   }
 };
 </script>

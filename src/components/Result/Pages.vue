@@ -2,7 +2,7 @@
   <div>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
-        <Page1
+        <Percent
           v-bind:sentiment="this.response.sentiment"
           v-bind:percent="this.response.mean"
           v-bind:query="this.response.query"
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import Page1 from "@/components/Result/Pages/Page1.vue";
+import Percent from "@/components/Result/Pages/Page1.vue";
 
 export default {
   name: "Pages",
   components: {
-    Page1
+    Percent
   },
   data() {
     return {
