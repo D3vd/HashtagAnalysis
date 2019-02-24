@@ -17,11 +17,11 @@
     </div>
 
     <div v-if="this.sentiment=='Controversial'">
-      <!-- <div class="contro-text contro-top">
+      <div class="contro-text contro-top">
         <span class="query">{{this.query}}</span> is
       </div>
       <div class="controversial">CONTROVERSIAL</div>
-      <div class="contro-text contro-bottom">at the moment</div>-->
+      <div class="contro-text contro-bottom">at the moment</div>
     </div>
   </div>
 </template>
@@ -65,6 +65,7 @@ export default {
     } else {
       this.backgroundColor = "#2F2F2F";
       this.particleColor = "#020302";
+      document.querySelector(".controversial").style.color = this.particleColor;
     }
 
     document.getElementById("particleground").style.opacity = 0;
@@ -103,5 +104,27 @@ export default {
 
 .query {
   color: #cdcdcd;
+}
+
+.controversial {
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  font-size: 16vw;
+  text-align: center;
+  transform: scale(1, 3);
+  position: absolute;
+  top: 150px;
+  z-index: -1;
+}
+
+.contro-text {
+  text-align: center;
+  font-size: 60px;
+}
+
+.contro-top {
+}
+
+.contro-bottom {
 }
 </style>

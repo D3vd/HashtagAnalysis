@@ -3,7 +3,7 @@
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <Percent
-          v-bind:sentiment="this.response.sentiment"
+          sentiment="Controversial"
           v-bind:percent="this.response.mean"
           v-bind:query="this.response.query"
         />
