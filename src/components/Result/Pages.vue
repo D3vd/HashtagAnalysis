@@ -26,7 +26,7 @@ export default {
     return {
       options: {
         menu: "#menu",
-        sectionsColor: ["", "", "#0798ec"]
+        sectionsColor: ["", "#0798ec", "#0798ec"]
       }
     };
   },
