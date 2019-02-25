@@ -3,12 +3,14 @@
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <Percent
-          sentiment="Controversial"
+          v-bind:sentiment="this.response.sentiment"
           v-bind:percent="this.response.mean"
           v-bind:query="this.response.query"
         />
       </div>
-      <div class="section">Second section ...</div>
+      <div class="section">
+        <PieChart v-bind:mean="this.mean" v-bind:total="this.total"/>
+      </div>
       <div class="section">Third section ...</div>
     </full-page>
   </div>
@@ -16,11 +18,13 @@
 
 <script>
 import Percent from "@/components/Result/Pages/Page1.vue";
+import PieChart from "@/components/Result/Pages/Page2.vue";
 
 export default {
   name: "Pages",
   components: {
-    Percent
+    Percent,
+    PieChart
   },
   data() {
     return {
@@ -31,7 +35,9 @@ export default {
     };
   },
   props: {
-    response: Object
+    response: Object,
+    mean: Array,
+    total: Array
   }
 };
 </script>

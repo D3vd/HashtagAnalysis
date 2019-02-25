@@ -10,7 +10,11 @@
     </div>
 
     <div v-if="!error&&!loading" style="position: relative">
-      <Pages v-bind:response="this.response"/>
+      <Pages
+        v-bind:response="this.response"
+        v-bind:mean="this.mean_values"
+        v-bind:total="this.total_values"
+      />
     </div>
   </div>
 </template>

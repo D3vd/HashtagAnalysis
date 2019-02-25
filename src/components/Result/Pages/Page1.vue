@@ -87,7 +87,7 @@ export default {
   z-index: -1;
   position: absolute;
   top: -300px;
-  left: -70px;
+  left: -20px;
   padding: 0;
 }
 
@@ -95,7 +95,7 @@ export default {
   padding: 20px;
   font-family: "Oswald", sans-serif;
   margin-top: 100px;
-  width: 50vw;
+  width: 60vw;
   font-size: 60px;
   float: right;
   z-index: 950;
