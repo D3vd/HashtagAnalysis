@@ -11,7 +11,14 @@
       <div class="section">
         <PieChart v-bind:mean="this.mean" v-bind:total="this.total"/>
       </div>
-      <div class="section">Third section ...</div>
+      <div class="section">
+        <PositiveTweets
+          v-bind:words="this.response.word_count.positive"
+          v-bind:tweets="this.response.tweets.positive_tweets"
+        />
+      </div>
+      <div class="section">Negative tweets section ...</div>
+      <div class="section">trending section ...</div>
     </full-page>
   </div>
 </template>
@@ -19,18 +26,20 @@
 <script>
 import Percent from "@/components/Result/Pages/Page1.vue";
 import PieChart from "@/components/Result/Pages/Page2.vue";
+import PositiveTweets from "@/components/Result/Pages/Page3.vue";
 
 export default {
   name: "Pages",
   components: {
     Percent,
-    PieChart
+    PieChart,
+    PositiveTweets
   },
   data() {
     return {
       options: {
         menu: "#menu",
-        sectionsColor: ["", "#0798ec", "#0798ec"]
+        sectionsColor: ["", "#6B6B6B", "#338A2E", "#AA3939", ""]
       }
     };
   },

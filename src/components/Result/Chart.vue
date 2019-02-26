@@ -1,6 +1,6 @@
 <template>
   <div class="chart">
-    <canvas v-bind:id="'result' + this.id"></canvas>
+    <canvas v-bind:id="'chart-result' + this.id"></canvas>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     createChart(values) {
-      const ctx = document.getElementById("result" + this.id);
+      const ctx = document.getElementById("chart-result" + this.id);
       // eslint-disable-next-line
       const myChart = new Chart(ctx, {
         type: "pie",

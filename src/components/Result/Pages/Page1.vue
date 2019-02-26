@@ -77,6 +77,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 .percent {
   font-family: "Oswald", sans-serif;
@@ -93,7 +94,7 @@ export default {
 
 .text {
   padding: 20px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin-top: 100px;
   width: 60vw;
   font-size: 60px;
@@ -120,11 +121,5 @@ export default {
 .contro-text {
   text-align: center;
   font-size: 60px;
-}
-
-.contro-top {
-}
-
-.contro-bottom {
 }
 </style>

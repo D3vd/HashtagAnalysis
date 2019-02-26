@@ -34,7 +34,7 @@ export default {
 .page2 {
   height: 100%;
   width: 100%;
-  padding: 10% 0;
+  padding: 12% 0;
 }
 </style>
 
