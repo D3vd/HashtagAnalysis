@@ -1,6 +1,13 @@
 <template>
   <div class="page3">
-    <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="1"/>
+    <v-layout row wrap>
+      <v-flex xs12 md6>
+        <div class="chart">
+          <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="1"/>
+        </div>
+      </v-flex>
+      <v-flex xs12 md6></v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -32,6 +39,9 @@ export default {
 </script>
 
 <style scoped>
+.chart {
+  background-color: aliceblue;
+}
 </style>
 
 
