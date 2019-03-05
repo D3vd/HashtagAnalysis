@@ -17,7 +17,12 @@
           v-bind:tweets="this.response.tweets.positive_tweets"
         />
       </div>
-      <div class="section">Negative tweets section ...</div>
+      <div class="section">
+        <NegativeTweets
+          v-bind:words="this.response.word_count.negative"
+          v-bind:tweets="this.response.tweets.negative_tweets"
+        />
+      </div>
       <div class="section">trending section ...</div>
     </full-page>
   </div>
@@ -27,13 +32,15 @@
 import Percent from "@/components/Result/Pages/Page1.vue";
 import PieChart from "@/components/Result/Pages/Page2.vue";
 import PositiveTweets from "@/components/Result/Pages/Page3.vue";
+import NegativeTweets from "@/components/Result/Pages/Page4.vue";
 
 export default {
   name: "Pages",
   components: {
     Percent,
     PieChart,
-    PositiveTweets
+    PositiveTweets,
+    NegativeTweets
   },
   data() {
     return {

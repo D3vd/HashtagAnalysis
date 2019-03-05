@@ -1,8 +1,8 @@
 <template>
-  <div class="page3">
+  <div class="page4">
     <v-layout row wrap>
       <v-flex md12>
-        <div class="page-title">Positive Tweets</div>
+        <div class="page-title">Negative Tweets</div>
       </v-flex>
     </v-layout>
     <v-layout row wrap>
@@ -11,7 +11,7 @@
         <div class="chart-content">
           <div class="chart-title">Most Used words</div>
           <div class="chart">
-            <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="1"/>
+            <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="2"/>
           </div>
         </div>
       </v-flex>
@@ -24,7 +24,7 @@
 import BarChart from "@/components/Result/BarChart.vue";
 
 export default {
-  name: "PositiveTweets",
+  name: "NegativeTweets",
   data() {
     return {
       labels: [],
@@ -59,7 +59,7 @@ export default {
   width: 100%;
   transform: translate(-50%, 0%);
   font-family: "Oswald", sans-serif;
-  color: #156711;
+  color: #801515;
 }
 
 .chart-content {
