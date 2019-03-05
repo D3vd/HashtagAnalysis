@@ -1,12 +1,21 @@
 <template>
   <div class="page3">
     <v-layout row wrap>
+      <v-flex md12>
+        <div class="page-title">Positive Tweets</div>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap>
+      <v-flex xs12 md3></v-flex>
       <v-flex xs12 md6>
-        <div class="chart">
-          <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="1"/>
+        <div class="chart-content">
+          <div class="chart-title">Most Used words</div>
+          <div class="chart">
+            <BarChart v-bind:values="this.values" v-bind:labels="this.labels" id="1"/>
+          </div>
         </div>
       </v-flex>
-      <v-flex xs12 md6></v-flex>
+      <v-flex xs12 md3></v-flex>
     </v-layout>
   </div>
 </template>
@@ -39,8 +48,32 @@ export default {
 </script>
 
 <style scoped>
-.chart {
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.page-title {
+  text-align: center;
+  font-size: 200px;
+  position: absolute;
+  left: 50%;
+  line-height: 200px;
+  width: 100%;
+  transform: translate(-50%, 0%);
+  font-family: "Oswald", sans-serif;
+  color: #156711;
+}
+
+.chart-content {
+  padding: 0 10px 0 10px;
   background-color: aliceblue;
+  margin-top: 20%;
+  position: relative;
+  z-index: 999;
+}
+
+.chart-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  text-align: center;
 }
 </style>
 

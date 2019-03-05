@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style scoped>
+.bar-chart {
+  width: 100%;
+}
 </style>
 
 
