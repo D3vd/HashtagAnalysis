@@ -17,7 +17,12 @@
       <v-flex xs12 md6>
         <div class="cards">
           <div v-for="tweet in tweets" :key="tweet.id" class="card">
-            <Card v-bind:text="tweet.text" v-bind:rt="tweet.retweet_count"/>
+            <Card
+              v-bind:name="tweet.name"
+              v-bind:profile_img="tweet.profile_img"
+              v-bind:text="tweet.text"
+              v-bind:rt="tweet.retweet_count"
+            />
           </div>
         </div>
       </v-flex>
@@ -72,9 +77,9 @@ export default {
 .chart-content {
   padding: 0 10px 0 10px;
   background-color: aliceblue;
-  margin-top: 25%;
   position: relative;
   z-index: 999;
+  margin: 25% 10px 0 10px;
 }
 
 .chart-title {

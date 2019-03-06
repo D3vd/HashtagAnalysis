@@ -3,14 +3,11 @@
     <v-card-actions>
       <v-list-tile class="grow card-title">
         <v-list-tile-avatar color="grey darken-3">
-          <v-img
-            class="elevation-6 profile-img"
-            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
-          ></v-img>
+          <v-img class="elevation-6 profile-img" v-bind:src="this.profile_img"></v-img>
         </v-list-tile-avatar>
 
         <v-list-tile-content>
-          <v-list-tile-title>Evan You</v-list-tile-title>
+          <v-list-tile-title>{{this.name}}</v-list-tile-title>
         </v-list-tile-content>
 
         <v-layout align-center justify-end>
@@ -29,7 +26,9 @@ export default {
   name: "Card",
   props: {
     text: String,
-    rt: Number
+    rt: Number,
+    name: String,
+    profile_img: String
   }
 };
 </script>
