@@ -15,7 +15,11 @@
         </div>
       </v-flex>
       <v-flex xs12 md6>
-        <Card/>
+        <div class="cards">
+          <div v-for="tweet in tweets" :key="tweet.id" class="card">
+            <Card v-bind:text="tweet.text" v-bind:rt="tweet.retweet_count"/>
+          </div>
+        </div>
       </v-flex>
     </v-layout>
   </div>
@@ -77,6 +81,14 @@ export default {
   font-family: "Oswald", sans-serif;
   font-size: 50px;
   text-align: center;
+}
+
+.cards {
+  padding: 20px;
+}
+
+.card {
+  margin: 10px 0;
 }
 </style>
 

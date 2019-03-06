@@ -15,20 +15,22 @@
 
         <v-layout align-center justify-end>
           <i class="material-icons">share</i>
-          <span class="subheading">45</span>
+          <span class="subheading">{{this.rt}}</span>
         </v-layout>
       </v-list-tile>
     </v-card-actions>
 
-    <v-card-text
-      class="font-weight-bold tweet-content"
-    >"Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."</v-card-text>
+    <v-card-text class="font-weight-bold tweet-content">"{{this.text}}"</v-card-text>
   </v-card>
 </template>
 
 <script>
 export default {
-  name: "Card"
+  name: "Card",
+  props: {
+    text: String,
+    rt: Number
+  }
 };
 </script>
 
@@ -38,7 +40,7 @@ export default {
 }
 
 .tweet-content {
-  font-size: 20px;
+  font-size: 15px;
 }
 </style>
 
