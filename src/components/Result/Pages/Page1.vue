@@ -21,7 +21,6 @@
         <span class="query">{{this.query}}</span> is
       </div>
       <div class="controversial">CONTROVERSIAL</div>
-      <div class="contro-text contro-bottom">at the moment</div>
     </div>
   </div>
 </template>

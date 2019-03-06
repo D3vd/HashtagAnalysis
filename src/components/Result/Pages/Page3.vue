@@ -6,7 +6,6 @@
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex xs12 md3></v-flex>
       <v-flex xs12 md6>
         <div class="chart-content">
           <div class="chart-title">Most Used words</div>
@@ -15,13 +14,16 @@
           </div>
         </div>
       </v-flex>
-      <v-flex xs12 md3></v-flex>
+      <v-flex xs12 md6>
+        <Card/>
+      </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
 import BarChart from "@/components/Result/BarChart.vue";
+import Card from "@/components/Result/TwitterCard.vue";
 
 export default {
   name: "PositiveTweets",
@@ -32,7 +34,8 @@ export default {
     };
   },
   components: {
-    BarChart
+    BarChart,
+    Card
   },
   props: {
     tweets: Array,
