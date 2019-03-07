@@ -7,7 +7,7 @@
       <div v-for="trend in trends" :key="trend.id">
         <div class="trend">
           <i class="material-icons">trending_up</i>
-          <a class="text">{{trend.name}}</a>
+          <a class="text" v-bind:href="'/result/'+ trend.name">{{trend.name}}</a>
         </div>
       </div>
     </div>
