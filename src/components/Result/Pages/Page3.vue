@@ -97,8 +97,18 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  .cards{
-    display: none;
+  .chart-title {
+    font-size: 30px;
+  }
+
+  .page-title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .chart-content {
+    margin: 60px 10px 0 10px;
+    padding: 0;
   }
 }
 </style>
