@@ -23,7 +23,9 @@
           v-bind:tweets="this.response.tweets.negative_tweets"
         />
       </div>
-      <div class="section">trending section ...</div>
+      <div class="section">
+        <Trending v-bind:trends="this.response.trending"/>
+      </div>
     </full-page>
   </div>
 </template>
@@ -33,6 +35,7 @@ import Percent from "@/components/Result/Pages/Page1.vue";
 import PieChart from "@/components/Result/Pages/Page2.vue";
 import PositiveTweets from "@/components/Result/Pages/Page3.vue";
 import NegativeTweets from "@/components/Result/Pages/Page4.vue";
+import Trending from "@/components/Result/Pages/Page5.vue";
 
 export default {
   name: "Pages",
@@ -40,13 +43,14 @@ export default {
     Percent,
     PieChart,
     PositiveTweets,
-    NegativeTweets
+    NegativeTweets,
+    Trending
   },
   data() {
     return {
       options: {
         menu: "#menu",
-        sectionsColor: ["", "#6B6B6B", "#338A2E", "#AA3939", ""]
+        sectionsColor: ["", "#6B6B6B", "#338A2E", "#AA3939", "#1da1f2"]
       }
     };
   },
