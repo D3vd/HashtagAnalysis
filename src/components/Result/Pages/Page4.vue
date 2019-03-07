@@ -107,7 +107,7 @@ export default {
   }
 
   .chart-content {
-    margin: 60px 10px 0 10px;
+    margin: 65px 10px 0 10px;
     padding: 0;
   }
 }

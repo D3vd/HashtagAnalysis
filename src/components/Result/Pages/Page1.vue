@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <div v-if="this.sentiment=='Controversial'">
-      <div class="contro-text contro-top">
+    <div v-if="this.sentiment=='Controversial'" class="contro">
+      <div class="contro-text">
         <span class="query">{{this.query}}</span> is
       </div>
       <div class="controversial">CONTROVERSIAL</div>
@@ -111,7 +111,7 @@ export default {
   width: 100%;
   font-size: 16vw;
   text-align: center;
-  transform: scale(1, 3);
+  transform: scale(1, 2.4);
   position: absolute;
   top: 150px;
   z-index: -1;
@@ -120,5 +120,29 @@ export default {
 .contro-text {
   text-align: center;
   font-size: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .percent {
+    font-size: 450px;
+    top: -120px;
+  }
+
+  .text {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 380px;
+  }
+
+  .controversial {
+    top: 280px;
+  }
+
+  .contro-text {
+    padding-top: 200px;
+    font-size: 40px;
+  }
 }
 </style>
