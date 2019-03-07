@@ -50,6 +50,12 @@ export default {
 .heading-container {
   padding: 30px;
 }
+
+@media screen and (max-width: 767px) {
+  .page2 {
+    padding: 0;
+  }
+}
 </style>
 
 

@@ -61,6 +61,17 @@ export default {
   font-size: 30px;
   padding: 40px 0 0 0;
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    font-size: 15px;
+  }
+
+  .trend-container {
+    margin: auto;
+    font-size: 20px;
+    width: 300px;
+    margin-top: 80px;
+  }
+}
 </style>
-
-

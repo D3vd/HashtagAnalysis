@@ -95,6 +95,12 @@ export default {
 .card {
   margin: 10px 0;
 }
+
+@media screen and (max-width: 767px) {
+  .cards {
+    display: none;
+  }
+}
 </style>
 
 
