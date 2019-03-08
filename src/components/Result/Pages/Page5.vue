@@ -7,7 +7,9 @@
       <div v-for="trend in trends" :key="trend.id">
         <div class="trend">
           <i class="material-icons">trending_up</i>
-          <a class="text" v-bind:href="'/result/'+ trend.name">{{trend.name}}</a>
+          <router-link class="text" :to="{ path: '/', query: { search: trend.name }}">
+            <a>{{trend.name}}</a>
+          </router-link>
         </div>
       </div>
     </div>

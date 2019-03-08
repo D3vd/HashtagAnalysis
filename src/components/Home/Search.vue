@@ -23,6 +23,11 @@ export default {
       showError: false
     };
   },
+  mounted: function() {
+    if (this.$route.query.search) {
+      this.query = this.$route.query.search;
+    }
+  },
   methods: {
     search: function() {
       let query = this.query;
